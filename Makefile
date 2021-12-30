@@ -45,7 +45,7 @@ verify:
 	cd ./verilog/dv/ && \
 	export SIM=${SIM} && \
 		$(MAKE) -j$(THREADS)
-
+#
 # Install DV setup
 .PHONY: simenv
 simenv:

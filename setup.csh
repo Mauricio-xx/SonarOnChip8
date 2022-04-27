@@ -4,8 +4,8 @@
 #export PDK_ROOT=/home/mxmont/Documents/software/OpenHardware/pdk
 #export OPENLANE_ROOT=/home/mxmont/Documents/software/OpenHardware/openlane
 
-export PDK_ROOT=../pdk
-export OPENLANE_ROOT=../openlane
+export PDK_ROOT=/home/asic/mont/pdk
+export OPENLANE_ROOT=/home/asic/mont/openlane
 export CARAVEL_ROOT=$(pwd)/caravel
 
 echo "################################################################################"

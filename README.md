@@ -44,14 +44,14 @@ The top level module consists of 36 channels, status register, prescaler registe
 
 ![Alt text](images/clocks.png)
 
-The top level implements a Wishbone slave, which multiplexes all channels using reduced data interface (16 bits) and address bus (4 bits). 
+The top level implements a Wishbone follower, which multiplexes all channels using reduced data interface (16 bits) and address bus (4 bits). 
 The multipexation scheme is based on address decoding and selection of a current module using One-Hot valid signal. 
 The status  register together with the most significant byte of the prescaler register hold the values of the comparison of all 36 channels. Those values are OR-ed  and passed to the IRQ[0] signal indicating detection of the signal of any microphone. The IRQ[1] and IRQ[2] are routed to the compare output of the most extreeme channels, what will permit not only detect the signal but also to determine the direction of arrival in a case of a linear array. The prescaler register set up the WE signal frequency for the PCM datapath, thus, various decimation values can be used in the datapath. The default value is 49, what corresponds to the decimation factor of 10. 
 
 <img src="images/hier.png" width="400">
 
 ## Register map
-Memory map of the system starts at address 0x3000 0000 (Wishbone Slave address space):
+Memory map of the system starts at address 0x3000 0000 (Wishbone Follower address space):
 Register     | Value
 ------------ | -------------
 Status               | 0x3000 0000
